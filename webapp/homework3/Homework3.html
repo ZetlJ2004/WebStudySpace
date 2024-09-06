@@ -3,16 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Badge Icon</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+      /* Badge整体容器 */
+      .badge {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Badge图标容器 */
+      .badge-content {
+        font-size: 80px; /* 设置图标尺寸 */
+        color: #2196f3; /* 图标颜色 */
+      }
+
+      /* Badge数字容器 */
+      .badge-wrapper {
+        position: absolute;
+        top: -10px; /* 调整位置到图标右上角 */
+        right: -10px;
+        background-color: red; /* 背景色 */
+        color: white; /* 字体颜色 */
+        font-size: 16px; /* 字体大小 */
+        padding: 5px; /* 内边距 */
+        border-radius: 50%; /* 使容器成为圆形 */
+        border: 3px solid white; /* 白色边框，用于留出白色空间 */
+        min-width: 30px; /* 设置最小宽度，保证数字在容器内 */
+        min-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* 水平和垂直居中对齐 */
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <h1>Example 01</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis at ipsum optio
-        perspiciatis, dolore et nobis itaque, fuga vero odit accusamus cupiditate! Ea ut quam
-        repudiandae animi recusandae, in corporis tenetur?
-      </p>
+    <div class="badge">
+      <span class="badge-content material-icons">account_balance_wallet</span>
+      <div class="badge-wrapper">12</div>
     </div>
   </body>
 </html>
