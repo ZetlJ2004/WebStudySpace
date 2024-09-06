@@ -22,6 +22,10 @@
 
 Learend how to maintaining remote repositories by git.
 
+#### 2024.09.06 8:37
+
+Finished homework1,solidify CSS's knowledge.
+
 ## Gains
 
 ### Knows how to use git to Maintaining remote repositories.
@@ -44,4 +48,28 @@ Learend how to maintaining remote repositories by git.
 **_git reset --hard_** :Make your local repositroies change to a version.
 <br>
 
+<hr>
+
 ### How to understand the branch,upstream?
+
+The remote repositroies but isn't your remote repositroies.Such like if i want to push the commite on BO's remote repositroies,his is upstream for me.And this way maybe appear the remote and local inconsistencies,so BO needs to pull the remote to renew his local repositrioies.
+
+<hr>
+
+### Homework 1
+
+#### 1.Position:relative\absolute
+
+You can understand by these pictures.
+![alt text](image.png)![alt text](image-1.png)
+
+#### 2.focus\valid\hover
+
+#### 3.Combinators Selectors
+
+<pre>
+ >： 直接子选择器。
+（空格）： 后代选择器。
++： 紧邻兄弟选择器。
+~： 通用兄弟选择器。
+</pre>

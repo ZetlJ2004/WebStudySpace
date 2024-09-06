@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style></style>
+  </head>
+  <style>
+    /* 全局的 input 样式 */
+    .input-field {
+      width: 100%; /* 横向最大占用 */
+      padding: 10px; /* 内边距 */
+      border-radius: 5px; /* 圆角 */
+      border: 1px solid red; /* 边框 */
+      box-sizing: border-box; /* 确保内边距包含在 width 中 */
+    }
+
+    /* form-group 类 */
+    .form-group {
+      display: flex; /* 横向弹性布局 */
+      align-items: center; /* 垂直居中对齐 */
+      margin-bottom: 15px; /* 元素之间的间距 */
+    }
+
+    /* form-label 类 */
+    .form-label {
+      width: 20%; /* 说明文字占用 20% */
+      text-align: right; /* 文本右对齐 */
+      padding-right: 10px; /* 说明文字与输入框之间的间距 */
+    }
+
+    /* form-input 类 */
+    .form-input {
+      width: 100%; /* 输入域容器占用 0% */
+    }
+    .form-infoinput {
+      width: 100%; /* 输入域容器占用 0% */
+      border-bottom: 1px solid black;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+    }
+    .form-infoinput:focus {
+      width: 100%; /* 输入域容器占用 0% */
+      border-bottom: 1px solid blue;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      outline: none;
+    }
+    .change {
+      bottom: 30px;
+      position: relative;
+      color: #000;
+      pointer-events: none;
+      transition: all 0.5s;
+    }
+    .form-infoinput:focus + label,
+    .form-infoinput:valid + label {
+      font-size: 12px;
+      position: relative;
+      bottom: 40px;
+      color: greenyellow;
+    }
+  </style>
+  <body>
+    <form>
+      <div class="input-field">
+        <h2>登录</h2>
+        <div class="form-group">
+          <label class="form-input">
+            <input class="form-infoinput" type="text" required="required" />
+            <label class="change">用户名</label>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="form-input">
+            <input class="form-infoinput" type="password" required="required" />
+            <label class="change">密码</label>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="form-label">性别</label>
+          <label class="form-input">
+            <input type="radio" name="sex" />
+            男
+            <input type="radio" name="sex" />
+            女
+          </label>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

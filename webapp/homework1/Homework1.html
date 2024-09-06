@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style></style>
+  </head>
+  <style>
+    /* 全局的 input 样式 */
+    .input-field {
+      width: 100%; /* 横向最大占用 */
+      padding: 10px; /* 内边距 */
+      border-radius: 5px; /* 圆角 */
+      border: 1px solid red; /* 边框 */
+      box-sizing: border-box; /* 确保内边距包含在 width 中 */
+    }
+
+    /* form-group 类 */
+    .form-group {
+      display: flex; /* 横向弹性布局 */
+      align-items: center; /* 垂直居中对齐 */
+      margin-bottom: 15px; /* 元素之间的间距 */
+    }
+
+    /* form-label 类 */
+    .form-label {
+      width: 20%; /* 说明文字占用 20% */
+      text-align: right; /* 文本右对齐 */
+      padding-right: 10px; /* 说明文字与输入框之间的间距 */
+    }
+
+    /* form-input 类 */
+    .form-input {
+      width: 80%; /* 输入域容器占用 80% */
+    }
+  </style>
+  <body>
+    <form>
+      <div class="input-field">
+        <div class="form-group">
+          <label class="form-label">用户名</label>
+          <label class="form-input"><input class="form-input" type="text" /></label>
+        </div>
+        <div class="form-group">
+          <label class="form-label">密码</label>
+          <label class="form-input"><input class="form-input" type="password" /></label>
+        </div>
+        <div class="form-group">
+          <label class="form-label">性别</label>
+          <label class="form-input">
+            <input type="radio" name="sex" />
+            男
+            <input type="radio" name="sex" />
+            女
+          </label>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
