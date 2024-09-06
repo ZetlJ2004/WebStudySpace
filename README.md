@@ -76,10 +76,18 @@ You can understand by these pictures.
 
 ### Homework 2
 
-#### About alignment
+#### 1.About alignment
 
-#### z-index
+#### 2.z-index
 
-#### Js
+#### 3.Js
 
 #### margin=-XXpx
+
+### Homework 3
+
+#### 1.Knows how to use Google Material Icon,how to induct it.
+
+### Homework 4
+
+#### 1.how to change the shape when width less than a vlaue.

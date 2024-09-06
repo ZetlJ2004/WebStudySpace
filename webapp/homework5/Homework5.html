@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Action Button</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+      .fab {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        background-color: #007bff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        transition: 0.5s;
+      }
+      .fab i {
+        transition: 0.5s;
+      }
+      .fab-menu {
+        position: absolute;
+        top: 80px;
+        right: 35px;
+        display: none;
+        flex-direction: column;
+      }
+
+      /* Menu items */
+      .fab-menu a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #007bff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: 0.5s;
+        margin-top: 10px;
+      }
+      .delete i {
+        color: red;
+      }
+      .fab-menu a:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Action Button -->
+    <div class="fab" data-icon="person" data-alt-icon="close">
+      <i class="material-icons">person</i>
+    </div>
+
+    <!-- Hidden Menu -->
+    <div class="fab-menu">
+      <a href="#"><i class="material-icons">edit</i></a>
+      <a href="#" class="delete"><i class="material-icons">delete</i></a>
+      <a href="#"><i class="material-icons">share</i></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var isOpen = false
+        var fab = $('.fab')
+        var fabIcon = fab.find('i')
+        var fabMenu = $('.fab-menu')
+
+        // On hover, rotate icon and show menu
+        fab.hover(
+          function () {
+            // Rotate icon and swap to close icon
+            fabIcon.css('transform', 'rotate(360deg)')
+            var newIcon = fab.attr('data-alt-icon')
+            fabIcon.text(newIcon)
+
+            // Show menu with fade in
+            fabMenu.fadeIn(300)
+          },
+          function () {
+            // Rotate icon back and swap to original icon
+            fabIcon.css('transform', 'rotate(0deg)')
+            var originalIcon = fab.attr('data-icon')
+            fabIcon.text(originalIcon)
+
+            // Hide menu with fade out
+            fabMenu.fadeOut(300)
+          }
+        )
+        fabMenu.hover(
+          function () {
+            // Rotate icon and swap to close icon
+            fabIcon.css('transform', 'rotate(360deg)')
+            var newIcon = fab.attr('data-alt-icon')
+            fabIcon.text(newIcon)
+
+            // Show menu with fade in
+            fabMenu.fadeIn(300)
+          },
+          function () {
+            // Rotate icon back and swap to original icon
+            fabIcon.css('transform', 'rotate(0deg)')
+            var originalIcon = fab.attr('data-icon')
+            fabIcon.text(originalIcon)
+
+            // Hide menu with fade out
+            fabMenu.fadeOut(300)
+          }
+        )
+      })
+    </script>
+  </body>
+</html>
