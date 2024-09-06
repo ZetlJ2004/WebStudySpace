@@ -43,7 +43,8 @@
       vertical-align: middle;
       margin-bottom: 10px;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      transition: 0.5s;
+      /* 太生硬辣 */
     }
     .lnav .material-icons {
       text-decoration: none;
@@ -63,9 +64,14 @@
       .lnav {
         min-width: 60px;
       }
-
       .lnav p {
         display: none; /* 隐藏文本，仅显示图标 */
+      }
+      .lnav:hover {
+        min-width: 180px;
+      }
+      .lnav:hover p {
+        display: block; /* 隐藏文本，仅显示图标 */
       }
     }
   </style>
@@ -88,7 +94,7 @@
         </div>
         <div class="main">
           <h1>Am I 天才？</h1>
-          <p>This is massage what i wanna show!</p>
+          <p>This is massage what I wanna show!</p>
         </div>
       </div>
     </div>
