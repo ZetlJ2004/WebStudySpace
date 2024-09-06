@@ -73,3 +73,13 @@ You can understand by these pictures.
 +： 紧邻兄弟选择器。
 ~： 通用兄弟选择器。
 </pre>
+
+### Homework 2
+
+#### About alignment
+
+#### z-index
+
+#### Js
+
+#### margin=-XXpx

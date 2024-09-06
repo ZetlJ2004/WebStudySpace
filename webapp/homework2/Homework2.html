@@ -5,14 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .container {
+      width: 960px;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+    .card {
+      border: 1px solid gainsboro;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 33vw;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      box-sizing: border-box;
+    }
+    .card-header img {
+      margin-left: auto;
+      margin-top: 5px;
+      margin-right: auto;
+      object-fit: cover;
+      opacity: 0.5;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .card-content p {
+      padding: 10px;
+      margin: 10px;
+      text-align: justify;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: flex-end; /* 让 a 标签在右边 */
+    }
+    .card-header {
+      display: flex;
+      justify-content: center; /* 水平居中对齐 */
+      align-items: center; /* 垂直居中对齐 */
+    }
+    .card-footer a {
+      position: relative;
+      bottom: 8px;
+      left: ;
+      margin: 20px;
+      align-self: flex-end;
+      padding: 5px;
+      text-decoration: none;
+      border: 0px;
+      font-size: 12px;
+      border-radius: 3px;
+      background-color: #ee6a6a;
+      color: white;
+    }
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+    }
+    .card:hover .card-header img {
+      opacity: 1; /* 使图片在悬停时完全不透明 */
+    }
+    .more:hover {
+      background-color: red;
+    }
+  </style>
   <body>
-    <div>
-      <h1>Example 01</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis at ipsum optio
-        perspiciatis, dolore et nobis itaque, fuga vero odit accusamus cupiditate! Ea ut quam
-        repudiandae animi recusandae, in corporis tenetur?
-      </p>
+    <div class="container">
+      <div class="row">
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/id/237/200/300" />
+          </div>
+          <div class="card-content">
+            <p>
+              狗狗巩固速度后来受到鼓励hi拉萨的韩国爱的回复搞活动给i哦嗯鸡肉饭该角色乳房收入高欸人都会共色电话各色地方给
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="more">查看详情</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/seed/picsum/200/300" />
+          </div>
+          <div class="card-content">
+            <p>云朵上的画好了砂砾石低功耗荣华富贵拉地府哦i圣公会SGHALKGRAGDHL 司空见惯和老公</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="more">查看详情</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/200/300?grayscale" />
+          </div>
+          <div class="card-content">
+            <p>
+              树木粉碎都很贵啦师父的回顾i了哈速度来个荷兰法国和拉到然后给拉二胡如果i荷兰人刚回来色块如果
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="more">查看详情</a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
