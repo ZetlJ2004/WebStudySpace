@@ -26,6 +26,7 @@
         transition: 0.5s;
       }
       .fab-menu {
+        border: 1px solid black;
         position: absolute;
         top: 80px;
         right: 35px;
@@ -71,17 +72,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
-        var isOpen = false
-        var fab = $('.fab')
-        var fabIcon = fab.find('i')
-        var fabMenu = $('.fab-menu')
+        let isOpen = false
+        let fab = $('.fab')
+        let fabIcon = fab.find('i')
+        let fabMenu = $('.fab-menu')
 
         // On hover, rotate icon and show menu
         fab.hover(
           function () {
             // Rotate icon and swap to close icon
-            fabIcon.css('transform', 'rotate(360deg)')
-            var newIcon = fab.attr('data-alt-icon')
+            fabIcon.css('transform', 'rotate(180deg)')
+            let newIcon = fab.attr('data-alt-icon')
             fabIcon.text(newIcon)
 
             // Show menu with fade in
@@ -90,7 +91,7 @@
           function () {
             // Rotate icon back and swap to original icon
             fabIcon.css('transform', 'rotate(0deg)')
-            var originalIcon = fab.attr('data-icon')
+            let originalIcon = fab.attr('data-icon')
             fabIcon.text(originalIcon)
 
             // Hide menu with fade out
@@ -100,8 +101,8 @@
         fabMenu.hover(
           function () {
             // Rotate icon and swap to close icon
-            fabIcon.css('transform', 'rotate(360deg)')
-            var newIcon = fab.attr('data-alt-icon')
+            fabIcon.css('transform', 'rotate(180deg)')
+            let newIcon = fab.attr('data-alt-icon')
             fabIcon.text(newIcon)
 
             // Show menu with fade in
@@ -110,7 +111,7 @@
           function () {
             // Rotate icon back and swap to original icon
             fabIcon.css('transform', 'rotate(0deg)')
-            var originalIcon = fab.attr('data-icon')
+            let originalIcon = fab.attr('data-icon')
             fabIcon.text(originalIcon)
 
             // Hide menu with fade out

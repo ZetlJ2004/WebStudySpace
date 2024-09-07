@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style></style>
+  </head>
+  <body>
+    <label for="courses">选择课程:</label>
+    <select id="courses">
+      <option value="1" selected>Java</option>
+      <option value="2">Web</option>
+      <option value="3">Python</option>
+    </select>
+
+    <p>
+      授课教师:
+      <span id="teacherName">BO</span>
+    </p>
+
+    <label for="inputText">输入文字:</label>
+    <input type="text" id="inputText" placeholder="输入字母..." />
+
+    <script>
+      const courses = [
+        { id: 1, courseName: 'Java', teacherName: 'BO' },
+        { id: 2, courseName: 'Web', teacherName: 'SUN' },
+        { id: 3, courseName: 'Python', teacherName: 'ZHANG' }
+      ]
+      const sc = document.getElementById('courses')
+      const tn = document.getElementById('teacherName')
+      const it = document.getElementById('inputText')
+
+      sc.addEventListener('change', function () {
+        const sId = parseInt(this.value)
+        const course = courses.find((c) => c.id === sId) // 修正这里
+        if (course) {
+          tn.textContent = course.teacherName
+        } else {
+          tn.textContent = 'N/A'
+        }
+      })
+
+      let inputTimeout
+      it.addEventListener('keyup', handleInput) // 修正这里
+      it.addEventListener('keydown', handleInput) // 修正这里
+      function handleInput() {
+        // 如果之前设置的定时器存在，先清除它
+        if (inputTimeout) {
+          clearTimeout(inputTimeout)
+        }
+
+        // 设置 2 秒延时
+        inputTimeout = setTimeout(() => {
+          // 将输入框内容转为大写
+          it.value = it.value.toUpperCase() // 这里改为 `it` 变量
+        }, 2000)
+      }
+    </script>
+  </body>
+</html>

@@ -79,18 +79,18 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(function () {
-        let modal;
-        $("[data-modal-target]").click(function () {
-          let modalId = $(this).data("modal-target");
-          modal = $(`#${modalId}`);
-          modal.fadeIn();
-          modal.children(".modal-dialog").animate({top:"20px"});
+        let modal
+        $('[data-modal-target]').click(function () {
+          let modalId = $(this).data('modal-target')
+          modal = $(`#${modalId}`)
+          modal.fadeIn()
+          modal.children('.modal-dialog').animate({ top: '20px' })
         })
-        $(".modal-dialog").click( () => false);
+        $('.modal-dialog').click(() => false)
 
-        $(".modal,[data-moadl-close]").click( ()=>{
-          modal.fadeOut();
-          modal.children(".modal-dialog").animate({top:"-20px"});
+        $('.modal,[data-moadl-close]').click(() => {
+          modal.fadeOut()
+          modal.children('.modal-dialog').animate({ top: '-20px' })
         })
       })
     </script>
