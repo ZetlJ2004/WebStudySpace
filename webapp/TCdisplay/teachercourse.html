@@ -33,7 +33,7 @@
 
       sc.addEventListener('change', function () {
         const sId = parseInt(this.value)
-        const course = courses.find((c) => c.id === sId) // 修正这里
+        const course = courses.find((c) => c.id === sId)
         if (course) {
           tn.textContent = course.teacherName
         } else {
