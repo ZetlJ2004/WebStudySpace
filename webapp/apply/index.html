@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "Alimama";
+      src: url("AlimamaShuHeiTi-Bold.ttf");
+    }
+    .container {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      background-image: url("https://cdn.pixabay.com/photo/2019/07/30/05/53/dog-4372036_1280.jpg");
+      padding-bottom: 100px;
+      padding-top: 50px;
+    }
+    .card {
+      background: white;
+      opacity: 0.5;
+      border: 1px solid gainsboro;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 33vw;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-bottom: 100px;
+      box-sizing: border-box;
+      transition: 0.8s;
+    }
+    .card-header img {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
+      object-fit: cover;
+      opacity: 0.5;
+      border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      max-width: 100%;
+      max-height: 100%;
+      transition: 0.5s;
+    }
+    .card-content-footer {
+      margin-top: -100px;
+      transition: 0.5s;
+    }
+    .card-content {
+      z-index: 1;
+    }
+    .card-content p,h3{
+      padding: 10px;
+      margin: 10px;
+      text-align: justify;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: flex-end; /* 让 a 标签在右边 */
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .card-header {
+      display: flex;
+      justify-content: center; /* 水平居中对齐 */
+      align-items: center; /* 垂直居中对齐 */
+      z-index: 3;
+      background-color: white;
+    }
+    .card-footer a {
+      position: relative;
+      bottom: 8px;
+      margin: 20px;
+      align-self: flex-end;
+      padding: 15px 20px;
+      text-decoration: none;
+      border: 0px;
+      font-size: 12px;
+      border-radius: 3px;
+      background-color: #ee6a6a;
+      color: white;
+      transition: 0.5s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+      opacity: 1;
+    }
+    .card:hover .card-header img {
+      opacity: 1; /* 使图片在悬停时完全不透明 */
+    }
+    .more:hover {
+      background-color: red;
+    }
+    .header{
+      background: #dcac67;
+      height: 100px;
+      display: flex;
+      border-bottom: gainsboro solid 2px;
+    }
+    .logo{
+      margin-right: auto;
+      padding-top: 10px;
+      padding-left: 10px;
+      height: 80px;
+      width: 120px;
+      position: absolute;
+    }
+    .header p{
+      font-family: Alimama;
+      font-size: xxx-large;
+      margin: auto;
+    }
+    .footer{
+      border-top: black solid 1px;
+      background: #dcac67;
+      color: white;
+    }
+  </style>
+  <body>
+  <img class="logo" src="./logo.png" />
+    <div class="container">
+      <div class="header">
+        <p>
+          “汪星人” 大联盟：宠物狗普及计划
+        </p>
+      </div>
+      <div class="row">
+        <div class="card">
+          <div class="card-header">
+            <img src="./demu.webp" />
+          </div>
+          <div class="card-content-footer">
+            <div class="card-content">
+              <h3 style="text-align: center">大型犬</h3>
+              <p>
+                大型犬的体重通常在25到50公斤（约55到110磅）之间，常用于保护和工作。如德牧、拉布拉多等
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="./test/index.html" class="more">查看详情</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="./douniu.webp" />
+          </div>
+          <div class="card-content-footer">
+            <div class="card-content">
+              <h3 style="text-align: center">中型犬</h3>
+              <p>中型犬的体重通常在10到25公斤（约22到55磅）之间，适合各种家庭环境。如斗牛犬、柯基等</p>
+            </div>
+            <div class="card-footer">
+              <a href="./middle/index.html" class="more">查看详情</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="./jiwawa.webp" />
+          </div>
+          <div class="card-content-footer">
+            <div class="card-content">
+              <h3 style="text-align: center">小型犬</h3>
+              <p>
+                小型犬通常体重在5到10公斤（约11到22磅）之间，适合城市居住和家庭陪伴。如腊肠犬、吉娃娃等
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="./small/index.html" class="more">查看详情</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+        第14组“汪星人” 大联盟：宠物狗普及计划
+        <br>
+        <br>
+        中国 黑龙江哈尔滨市香坊区和兴路26号  邮编  150040
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 获取卡片和相关元素
+    const cards = document.querySelectorAll('.card')
+
+    cards.forEach((card) => {
+      const cardHeaderImg = card.querySelector('.card-header img')
+      const cs = card.querySelector('.card-content-footer')
+      const ct = card.querySelector('.card-content p')
+      const ch = card.querySelector('.card-content h3')
+      const cf = card.querySelector('.card-footer')
+
+      // 鼠标移入事件
+      card.addEventListener('mouseenter', () => {
+        ct.style.opacity = '100%'
+        cf.style.opacity = '100%'
+        ch.style.opacity = '100%'
+        // 图片上移
+        cardHeaderImg.style.transform = 'translateY(-20px)'
+        // 文本和按钮下移并显示
+        cs.style.transform = 'translateY(100px)'
+      })
+      // 鼠标移出事件
+      card.addEventListener('mouseleave', () => {
+        // 图片恢复原位
+        cardHeaderImg.style.transform = 'translateY(0)'
+        // 文本和按钮隐藏
+        cs.style.transform = 'translateY(0)'
+        ct.style.opacity = '0'
+        cf.style.opacity = '0'
+        ch.style.opacity = '0'
+      })
+    })
+  </script>
+</html>
