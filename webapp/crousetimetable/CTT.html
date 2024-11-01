@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>授课周简化显示</h2>
+    输入授课周
+    <input type="text" id="weeksInput" placeholder="例如：1235678" />
+    <button onclick="simplifyWeeks()">简化显示</button>
+    <br />
+    结果：
+    <span id="result"></span>
+
+    <script>
+      function simplifyWeeks() {
+        let input = document.getElementById('weeksInput').value
+
+        // 将输入字符串转换为数字数组
+        //let weeks = Array.from(new Set(Array.from(input)))
+
+        let weeks = Array.from(input)
+          .map(Number)
+          //.filter(n => !isNaN(n) && n > 0 && n <= 7) //过滤非数字以及违法数字
+          .filter((n) => !isNaN(n))
+          .sort((a, b) => a - b)
+
+        weeks = [...new Set(weeks)]
+
+        //异常检验
+        if (weeks.length === 0 || weeks[weeks.length - 1] > 7 || weeks[0] === 0) {
+          document.getElementById('result').textContent = 'ERROR！'
+          return
+        }
+
+        let result = []
+        let start = weeks[0]
+
+        //后置指针判断与前项元素是否连续
+        for (let i = 1; i < weeks.length; i++) {
+          if (weeks[i] !== weeks[i - 1] + 1) {
+            //是否仅一项
+            if (start === weeks[i - 1]) {
+              result.push(start.toString())
+            } else {
+              result.push(`${start}-${weeks[i - 1]}`)
+            }
+            start = weeks[i]
+          }
+        }
+
+        // 处理最后一段
+        if (start === weeks[weeks.length - 1]) {
+          result.push(start.toString())
+        } else {
+          result.push(`${start}-${weeks[weeks.length - 1]}`)
+        }
+
+        document.getElementById('result').textContent = result.join(', ')
+      }
+    </script>
+  </body>
+</html>
