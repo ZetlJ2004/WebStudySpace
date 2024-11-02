@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
-    <style></style>
+    <title>授课周简化显示</title>
   </head>
   <body>
     <h2>授课周简化显示</h2>
@@ -18,19 +17,18 @@
       function simplifyWeeks() {
         let input = document.getElementById('weeksInput').value
 
-        // 将输入字符串转换为数字数组
-        //let weeks = Array.from(new Set(Array.from(input)))
-
-        let weeks = Array.from(input)
-          .map(Number)
-          //.filter(n => !isNaN(n) && n > 0 && n <= 7) //过滤非数字以及违法数字
-          .filter((n) => !isNaN(n))
+        // 将输入字符串转换为数字数组，去重并排序
+        let weeks = Array.from(
+          new Set(
+            Array.from(input)
+              .map(Number)
+              .filter((n) => !isNaN(n) && n > 0 && n <= 7)
+          )
+        ) // 去重、过滤非数字及非法数字
           .sort((a, b) => a - b)
 
-        weeks = [...new Set(weeks)]
-
-        //异常检验
-        if (weeks.length === 0 || weeks[weeks.length - 1] > 7 || weeks[0] === 0) {
+        // 异常检验
+        if (weeks.length === 0) {
           document.getElementById('result').textContent = 'ERROR！'
           return
         }
@@ -38,26 +36,28 @@
         let result = []
         let start = weeks[0]
 
-        //后置指针判断与前项元素是否连续
-        for (let i = 1; i < weeks.length; i++) {
-          if (weeks[i] !== weeks[i - 1] + 1) {
-            //是否仅一项
-            if (start === weeks[i - 1]) {
-              result.push(start.toString())
-            } else {
-              result.push(`${start}-${weeks[i - 1]}`)
+        // 负责遍历并标记区间
+        function markIntervals() {
+          for (let i = 1; i < weeks.length; i++) {
+            if (weeks[i] !== weeks[i - 1] + 1) {
+              addToResult(start, weeks[i - 1]) // 添加结果
+              start = weeks[i] // 更新起始点
             }
-            start = weeks[i]
+          }
+          // 处理最后一段
+          addToResult(start, weeks[weeks.length - 1])
+        }
+
+        // 负责将区间格式化并推入结果数组
+        function addToResult(start, end) {
+          if (start === end) {
+            result.push(start.toString())
+          } else {
+            result.push(`${start}-${end}`)
           }
         }
 
-        // 处理最后一段
-        if (start === weeks[weeks.length - 1]) {
-          result.push(start.toString())
-        } else {
-          result.push(`${start}-${weeks[weeks.length - 1]}`)
-        }
-
+        markIntervals() // 调用函数进行区间标记
         document.getElementById('result').textContent = result.join(', ')
       }
     </script>
