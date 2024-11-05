@@ -30,7 +30,7 @@
         weeks = [...new Set(weeks)]
 
         //异常检验
-        if (weeks.length === 0 || weeks[weeks.length - 1] > 7 || weeks[0] === 0) {
+        if (weeks.length === 0 || weeks[0] === 0) {
           document.getElementById('result').textContent = 'ERROR！'
           return
         }
